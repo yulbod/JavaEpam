@@ -19,7 +19,7 @@ public class Main {
 
         boolean isQuit = false;
         while (!isQuit) {
-
+            System.out.print("Your choice is --> ");
             byte choice = scan.nextByte();
 
             switch (choice) {
@@ -59,14 +59,14 @@ public class Main {
 
     public  static void firstFig(){
 
-        for (int i=0; i<height; i++){
-            for (int y =0 ; y<i; y++) {
+        for (int line=0; line<height; line++){
+            for (int y =0 ; y<line; y++) {
                 System.out.print(" * ");
             }
             System.out.print("\n");
         }
-         for (int i = height; i >0; i--) {
-             for (int y = i  ; y>0; y--) {
+         for (int line = height; line >0; line--) {
+             for (int y = line  ; y>0; y--) {
                  System.out.print(" * ");
              }
              System.out.print("\n");
@@ -74,13 +74,13 @@ public class Main {
     }
 
     public  static void secondFig(){
-        for (int i = height; i>0; i--){
+        for (int line = height; line>0; line--){
 
-            for (int y = height; y>i; y--){
+            for (int y = height; y>line; y--){
                 System.out.print("   ");
             }
 
-            for (int y = 0; y<i; y++){
+            for (int y = 0; y<line; y++){
                 System.out.print(" * ");
             }
             System.out.print("\n");
@@ -88,13 +88,13 @@ public class Main {
     }
 
     public static void thirdFig(){
-        for (int i = 1; i<=height; i++){
+        for (int line = 1; line<=height; line++){
 
-            for (int y = height; y>i; y--){
+            for (int y = height; y>line; y--){
                 System.out.print("   ");
             }
 
-            for (int y = 0; y<i; y++){
+            for (int y = 0; y<line; y++){
                 System.out.print(" * ");
             }
             System.out.print("\n");
@@ -102,24 +102,24 @@ public class Main {
     }
 
     public static void fourthFig(){
-        for (int i = 1; i<height; i++){
+        for (int line = 1; line<height; line++){
 
-            for (int y = height; y>i; y--){
+            for (int y = height; y>line; y--){
                 System.out.print("   ");
             }
 
-            for (int y = 0; y<i; y++){
+            for (int y = 0; y<line; y++){
                 System.out.print(" * ");
             }
             System.out.print("\n");
         }
-        for (int i = height; i>0; i--){
+        for (int line = height; line>0; line--){
 
-            for (int y = height; y>i; y--){
+            for (int y = height; y>line; y--){
                 System.out.print("   ");
             }
 
-            for (int y = 0; y<i; y++){
+            for (int y = 0; y<line; y++){
                 System.out.print(" * ");
             }
             System.out.print("\n");
@@ -132,20 +132,20 @@ public class Main {
 
         while (iterator < 2){             //circle for two triangle
 
-            for (int i = 1; i<=height; i++){
+            for (int line = 1; line<=height; line++){
 
-                for (int y = height; y>i; y--){
+                for (int y = height; y>line; y--){
                     System.out.print("   ");
                 }
 
-                for (int y = 0; y<i; y++){
+                for (int y = 0; y<line; y++){
                     System.out.print(" * ");
                 }
 
-                for (int y = 1; y<i; y++){
+                for (int y = 1; y<line; y++){
                     System.out.print(" * ");
                 }
-                for (int y = height; y>i; y--){
+                for (int y = height; y>line; y--){
                     System.out.print("   ");
                 }
 
