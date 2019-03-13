@@ -41,7 +41,6 @@ public class Task4 {
             for (int i = 0; i < negArray.length; i++) {
                 System.out.print(negArray[i] + " ");
             }
-
         } else System.out.println("Wrong data!");
     }
 }
