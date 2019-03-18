@@ -9,13 +9,10 @@ public class Task2 {
         int size = scan.nextInt();
         if (size > 0 && size < 2000000 ) {
             int[] array = new int[size];
-            for (int i = 0; i < size; i++) {
-                array[i] = (int) (Math.random() * 20);
-            }
+            array = randomFillArray(array);
+
             System.out.println("\nThis is your array:");
-            for (int i = 0; i < size; i++) {
-                System.out.print(array[i] + " ");
-            }
+            showArray(array);
 
             int quantityOddNum = 0;
             System.out.println("\nThere are only odd numbers:");
@@ -28,5 +25,18 @@ public class Task2 {
             System.out.println("\nQuantity of odd numbers is " + quantityOddNum);
         }
         else System.out.println("Wrong data!");
+    }
+
+    public static int[] randomFillArray(int[] arr){
+        for (int i = 0; i <arr.length; i++) {
+            arr[i] = (int) (Math.random() * 20);
+        }
+        return arr;
+    }
+
+    public static void showArray(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
