@@ -2,7 +2,7 @@ package task1;
 
 public class Books {
     Book[] massBooks;
-    static int number = 0;
+    int number = 0;
 
     public Books(int size) {
         massBooks = new Book[size];
@@ -27,20 +27,26 @@ public class Books {
         }
     }
 
-    public void searchByAuthor(String sAuthor){
+    public Books searchByAuthor(String sAuthor){
         System.out.println("There is a list of found books, written by author " + sAuthor + ":");
+        Books result = new Books(massBooks.length);
         for (Book book: massBooks) {
             if (book !=null && sAuthor.equalsIgnoreCase(book.getAuthor()))
-                book.view();
+                result.addBook(book.getId(),book.getName(), book.getAuthor(), book.getPublishing(), book.getYearOfPublish(), book.getQtyOfPages(), book.getPrice());
         }
+        return result;
     }
 
-    public void searchAfterYear(int sYear){
+    public Books searchAfterYear(int sYear){
         System.out.println("There is a list of found books, published after " + sYear + " year:");
+        System.out.println("length = " + massBooks.length);
+        Books result = new Books(massBooks.length);
         for (Book book: massBooks) {
-            if (book != null && book.getYearOfPublish() > sYear)
-                book.view();
+            if (book != null && book.getYearOfPublish() > sYear){
+                result.addBook(book.getId(),book.getName(), book.getAuthor(), book.getPublishing(), book.getYearOfPublish(), book.getQtyOfPages(), book.getPrice());
+            }
         }
+        return result;
     }
 
 

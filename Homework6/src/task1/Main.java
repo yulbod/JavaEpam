@@ -12,7 +12,9 @@ public class Main {
 
         Books firstSet = new Books(size);
 
-        firstSet.addBook(1, "Solaris", "Lem", "Izdatel", 1999, 400, 360);
+        firstSet.addBook(1, "Solaris", "Lem", "Izdatel", 1999, 400, 560);
+        firstSet.addBook(2, "ris", "Mem", "el", 1999, 400, 360);
+        firstSet.addBook(5, "Solaris", "Lem", "Izdatel", 2999, 400, 360);
         System.out.println("All books:");
         firstSet.view();
         changeAllPrices(firstSet);
@@ -33,13 +35,15 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter an author for searching:");
         String author = scan.nextLine();
-        record.searchByAuthor(author);
+        Books result = record.searchByAuthor(author);
+        result.view();
     }
 
     public static void searchYear(Books record){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a year for searching books published after this year:");
         int year = scan.nextInt();
-        record.searchAfterYear(year);
+        Books result = record.searchAfterYear(year);
+        result.view();
     }
 }
