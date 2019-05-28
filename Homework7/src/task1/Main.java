@@ -5,24 +5,26 @@ public class Main {
     public static final int QUANTITY_OF_TYPES = 3;
 
     public static void main(String[] args) {
-        Rectangle rec1 = new Rectangle("white ", 12, 10);
-        Rectangle rec2 = new Rectangle("yellow ", 10, 10);
-        Rectangle rec3 = new Rectangle("blue  ", 1, 10);
-        Rectangle rec4 = new Rectangle("brown ", 0, 10);
 
-        Circle cir1 = new Circle("green", 10);
-        Circle cir2 = new Circle("green", 10);
-        Circle cir3 = new Circle("green", 10);
-
-        Triangle tri1 = new Triangle("pink", 4, 3, 5);
-        Triangle tri2 = new Triangle("black", 5, 3, 5);
-
-        Shape[] shapes = new Shape[] {rec1, rec2, rec3, rec4, cir1, cir2, cir3, tri1, tri2};
+        Shape[] shapes = fillArray();       //UPD done: creation an array
 
         enterAllFigures(shapes);
         calcSumOfAreas(shapes);
         enterSumOfSpecialAreas(calcSumOfSpecialAreas(shapes));
+    }
 
+    public static Shape[] fillArray(){
+        return new Shape[]{
+                new Rectangle("white ", 12, 10),
+                new Rectangle("yellow ", 10, 10),
+                new Rectangle("blue  ", 1, 10),
+                new Rectangle("brown ", 0, 10),
+                new Circle("green", 10),
+                new Circle("green", 10),
+                new Circle("green", 10),
+                new Triangle("pink", 4, 3, 5),
+                new Triangle("black", 5, 3, 5)
+        };
     }
 
     public static void enterAllFigures(Shape[] shapes){

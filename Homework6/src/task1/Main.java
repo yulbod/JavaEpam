@@ -12,9 +12,11 @@ public class Main {
 
         Books firstSet = new Books(size);
 
-        firstSet.addBook(1, "Solaris", "Lem", "Izdatel", 1999, 400, 560);
-        firstSet.addBook(2, "ris", "Mem", "el", 1999, 400, 360);
-        firstSet.addBook(5, "Solaris", "Lem", "Izdatel", 2999, 400, 360);
+        Book first = new Book(1, "Solaris", "Lem", "Izdatel", 1999, 400, 560);
+        if (firstSet.addBook(first))
+            System.out.println("Book added.");
+        else System.out.println("List is full.");
+
         System.out.println("All books:");
         firstSet.view();
         changeAllPrices(firstSet);

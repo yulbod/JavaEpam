@@ -4,7 +4,7 @@ public class Rectangle extends Shape{
     private float width;
     private float height;
 
-    public Rectangle(String color, float width, float height) {
+    public Rectangle(String color, float width, float height) { //check the parameters
         super(color);
         this.height = height;
         this.width = width;
@@ -32,4 +32,6 @@ public class Rectangle extends Shape{
     public float calcArea() {
         return height*width;
     }
+
+
 }
