@@ -21,6 +21,18 @@ public class IntegerArrayGenerator {
         return arraySorted;
     }
 
+    public Integer[] filterListBy(Integer[] array, UserIntegerFilter filter){
+        Integer[] result = new Integer[array.length];
+        int temp = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (filter.filterArrayInteger(array[i])){
+                result[temp] = array[i];
+                temp++;
+            }
+        }
+        return result;
+    }
 
 
 }

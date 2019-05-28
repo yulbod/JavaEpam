@@ -1,6 +1,7 @@
 package task1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -54,7 +55,6 @@ public class StringListGenerator {
     }
 
     public void showList(ArrayList<String> list){
-        checkExisting(list);
         System.out.println("List:");
         for (String str:
              list) {
@@ -64,5 +64,16 @@ public class StringListGenerator {
 
     public void checkExisting(ArrayList<String> list){
         if (list == null || list.size() < 1) throw new IllegalArgumentException("List is empty!");
+    }
+
+    public ArrayList<String> filterListBy(ArrayList<String> list, UserStringFilter filter){
+        ArrayList<String> result = new ArrayList<>();
+        for (String str:
+             list) {
+            if (filter.filterListStrings(str)){
+                result.add(str);
+            }
+        }
+        return result;
     }
 }
